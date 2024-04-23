@@ -1,0 +1,13 @@
+parsePart是语法分析部分
+SemanticPart是语义分析部分
+midcode是中间代码生成部分
+optimization是优化部分，目前只有常量表达式优化
+token是词法分析部分
+include中有头文件和声明的结构体
+main是主函数（语法和语义）
+
+产生token可执行文件 g++ -std=c++14 tokenPart/token.cpp -o token
+
+产生main可执行文件 g++ -std=c++11 main.cpp ./parsePart/parsePart.cpp ./SemanticPart/Semantic.cpp ./MidCodePart/midcode.cpp  ./MidCodePart/midCodePro.cpp ./optimization/constOptimization.cpp -o parser
+
+文件夹里面不要动，里面文件包含用的是相对路径，改了就乱了
